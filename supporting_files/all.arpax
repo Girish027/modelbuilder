@@ -1,0 +1,1204 @@
+<language-model xml:lang="en-US" root="TopLevelRule" tag-format="semantics/1.0">
+
+<ngram-rule scope="public" id="BasicNGram" src="inter.arpa">
+	<ngram-token id="_class_family" type="ruleref" value="#_class_family_1"/>
+	<ngram-token id="_class_united_states" type="ruleref" value="#_class_united_states_1"/>
+	<ngram-token id="_class_number" type="ruleref" value="#_class_number_1"/>
+	<ngram-token id="_class_date" type="ruleref" value="#_class_date_1"/>
+	<ngram-token id="_class_currency" type="ruleref" value="#_class_currency_1"/>
+	<ngram-token id="_class_location_domestic" type="ruleref" value="#_class_location_domestic_1"/>
+	<ngram-token id="_class_location_international" type="ruleref" value="#_class_location_international_1"/>
+</ngram-rule>
+
+<rule id="TopLevelRule" scope="public">
+    <tag> out={}; index=0; out.Fragments=FragsGlobal = new Array(); out.classsubstitution = gSubstitutions = [];</tag>
+    <ruleref uri="#BasicNGram"/>
+</rule>
+
+<rule id="_class_family_1" scope="public">
+	<ruleref uri="#_class_family_2"/>
+	<tag> gSubstitutions.push({interpretation: rules.latest(),tokens: meta.latest().text,klass: "_class_family" }); </tag>
+</rule>
+
+<rule id="_class_united_states_1" scope="public">
+	<ruleref uri="#_class_united_states_2"/>
+	<tag> gSubstitutions.push({interpretation: rules.latest(),tokens: meta.latest().text,klass: "_class_united_states" }); </tag>
+</rule>
+
+<rule id="_class_number_1" scope="public">
+	<ruleref uri="#_class_number_2"/>
+	<tag> gSubstitutions.push({interpretation: rules.latest(),tokens: meta.latest().text,klass: "_class_number" }); </tag>
+</rule>
+
+<rule id="_class_date_1" scope="public">
+	<ruleref uri="#_class_date_2"/>
+	<tag> gSubstitutions.push({interpretation: rules.latest(),tokens: meta.latest().text,klass: "_class_date" }); </tag>
+</rule>
+
+<rule id="_class_currency_1" scope="public">
+	<ruleref uri="#_class_currency_2"/>
+	<tag> gSubstitutions.push({interpretation: rules.latest(),tokens: meta.latest().text,klass: "_class_currency" }); </tag>
+</rule>
+
+<rule id="_class_location_domestic_1" scope="public">
+	<ruleref uri="#_class_location_domestic_2"/>
+	<tag> gSubstitutions.push({interpretation: rules.latest(),tokens: meta.latest().text,klass: "_class_location_domestic" }); </tag>
+</rule>
+
+<rule id="_class_location_international_1" scope="public">
+	<ruleref uri="#_class_location_international_2"/>
+	<tag> gSubstitutions.push({interpretation: rules.latest(),tokens: meta.latest().text,klass: "_class_location_international" }); </tag>
+</rule>
+
+<rule id="_class_family_2" scope="public">
+	<one-of>
+	    <item>
+	    wife's
+	    </item>
+	    <item>
+	    granddaughter
+	    </item>
+	    <item>
+	    husband's
+	    </item>
+	    <item>
+	    granddaughter's
+	    </item>
+	    <item>
+	    grandson's
+	    </item>
+	    <item>
+	    spouse
+	    </item>
+	    <item>
+	    spouses
+	    </item>
+	    <item>
+	    spouse's
+	    </item>
+	    <item>
+	    son
+	    </item>
+	    <item>
+	    daughter's
+	    </item>
+	    <item>
+	    wives
+	    </item>
+	    <item>
+	    grandson
+	    </item>
+	    <item>
+	    wife
+	    </item>
+	    <item>
+	    son's
+	    </item>
+	    <item>
+	    daughter
+	    </item>
+	    <item>
+	    husband
+	    </item>
+	</one-of>
+</rule>
+
+<rule id="_class_united_states_2" scope="public">
+	<one-of>
+	    <item>
+	    u s a
+	    </item>
+	    <item>
+	    united states
+	    </item>
+	    <item>
+	    the states
+	    </item>
+	    <item>
+	    u s
+	    </item>
+	</one-of>
+</rule>
+
+<rule id="_class_number_2" scope="public">
+	<one-of>
+	    <item>
+	    sixteen
+	    </item>
+	    <item>
+	    forty
+	    </item>
+	    <item>
+	    billion
+	    </item>
+	    <item>
+	    ten
+	    </item>
+	    <item>
+	    eleven
+	    </item>
+	    <item>
+	    sixty
+	    </item>
+	    <item>
+	    four
+	    </item>
+	    <item>
+	    eighteen
+	    </item>
+	    <item>
+	    fourty
+	    </item>
+	    <item>
+	    eighty
+	    </item>
+	    <item>
+	    thirty
+	    </item>
+	    <item>
+	    fifty
+	    </item>
+	    <item>
+	    thousand
+	    </item>
+	    <item>
+	    five
+	    </item>
+	    <item>
+	    hundred
+	    </item>
+	    <item>
+	    seventy
+	    </item>
+	    <item>
+	    ninety
+	    </item>
+	    <item>
+	    seventeen
+	    </item>
+	    <item>
+	    eight
+	    </item>
+	    <item>
+	    nine
+	    </item>
+	    <item>
+	    nineteen
+	    </item>
+	    <item>
+	    twenty
+	    </item>
+	    <item>
+	    million
+	    </item>
+	    <item>
+	    three
+	    </item>
+	    <item>
+	    twelve
+	    </item>
+	    <item>
+	    six
+	    </item>
+	    <item>
+	    two
+	    </item>
+	    <item>
+	    fourteen
+	    </item>
+	    <item>
+	    seven
+	    </item>
+	    <item>
+	    thirteen
+	    </item>
+	    <item>
+	    fifteen
+	    </item>
+	</one-of>
+</rule>
+
+<rule id="_class_date_2" scope="public">
+	<one-of>
+	    <item>
+	    tuesday
+	    </item>
+	    <item>
+	    seventeenth
+	    </item>
+	    <item>
+	    january's
+	    </item>
+	    <item>
+	    monday
+	    </item>
+	    <item>
+	    thursday's
+	    </item>
+	    <item>
+	    april's
+	    </item>
+	    <item>
+	    january
+	    </item>
+	    <item>
+	    august's
+	    </item>
+	    <item>
+	    tenth
+	    </item>
+	    <item>
+	    thursday
+	    </item>
+	    <item>
+	    tuesday's
+	    </item>
+	    <item>
+	    august
+	    </item>
+	    <item>
+	    seventh
+	    </item>
+	    <item>
+	    friday
+	    </item>
+	    <item>
+	    eighth
+	    </item>
+	    <item>
+	    sixth
+	    </item>
+	    <item>
+	    fourth
+	    </item>
+	    <item>
+	    september's
+	    </item>
+	    <item>
+	    third
+	    </item>
+	    <item>
+	    october's
+	    </item>
+	    <item>
+	    friday's
+	    </item>
+	    <item>
+	    june's
+	    </item>
+	    <item>
+	    eleventh
+	    </item>
+	    <item>
+	    sunday's
+	    </item>
+	    <item>
+	    july's
+	    </item>
+	    <item>
+	    november
+	    </item>
+	    <item>
+	    february
+	    </item>
+	    <item>
+	    fourteenth
+	    </item>
+	    <item>
+	    sunday
+	    </item>
+	    <item>
+	    sixteenth
+	    </item>
+	    <item>
+	    wednesday
+	    </item>
+	    <item>
+	    nineteenth
+	    </item>
+	    <item>
+	    april
+	    </item>
+	    <item>
+	    thirteenth
+	    </item>
+	    <item>
+	    monday's
+	    </item>
+	    <item>
+	    eighteenth
+	    </item>
+	    <item>
+	    thirtieth
+	    </item>
+	    <item>
+	    twentieth
+	    </item>
+	    <item>
+	    fifth
+	    </item>
+	    <item>
+	    march's
+	    </item>
+	    <item>
+	    july
+	    </item>
+	    <item>
+	    march
+	    </item>
+	    <item>
+	    june
+	    </item>
+	    <item>
+	    wednesday's
+	    </item>
+	    <item>
+	    saturday's
+	    </item>
+	    <item>
+	    november's
+	    </item>
+	    <item>
+	    twelfth
+	    </item>
+	    <item>
+	    september
+	    </item>
+	    <item>
+	    fifteenth
+	    </item>
+	    <item>
+	    february's
+	    </item>
+	    <item>
+	    saturday
+	    </item>
+	    <item>
+	    october
+	    </item>
+	    <item>
+	    ninth
+	    </item>
+	    <item>
+	    december's
+	    </item>
+	    <item>
+	    december
+	    </item>
+	</one-of>
+</rule>
+
+<rule id="_class_currency_2" scope="public">
+	<one-of>
+	    <item>
+	    cent
+	    </item>
+	    <item>
+	    dollar
+	    </item>
+	    <item>
+	    cents
+	    </item>
+	    <item>
+	    dollars
+	    </item>
+	</one-of>
+</rule>
+
+<rule id="_class_location_domestic_2" scope="public">
+	<one-of>
+	    <item>
+	    idaho
+	    </item>
+	    <item>
+	    oklahoma
+	    </item>
+	    <item>
+	    washington
+	    </item>
+	    <item>
+	    east coast
+	    </item>
+	    <item>
+	    connecticut
+	    </item>
+	    <item>
+	    wisconsin
+	    </item>
+	    <item>
+	    seattle
+	    </item>
+	    <item>
+	    denver
+	    </item>
+	    <item>
+	    mississippi
+	    </item>
+	    <item>
+	    portland
+	    </item>
+	    <item>
+	    illinois
+	    </item>
+	    <item>
+	    newark
+	    </item>
+	    <item>
+	    pittsburgh
+	    </item>
+	    <item>
+	    salt lake
+	    </item>
+	    <item>
+	    atlanta
+	    </item>
+	    <item>
+	    palm springs
+	    </item>
+	    <item>
+	    district of columbia
+	    </item>
+	    <item>
+	    hilton head
+	    </item>
+	    <item>
+	    key west
+	    </item>
+	    <item>
+	    san diego
+	    </item>
+	    <item>
+	    kapalua
+	    </item>
+	    <item>
+	    miami
+	    </item>
+	    <item>
+	    las vegas
+	    </item>
+	    <item>
+	    new orleans
+	    </item>
+	    <item>
+	    new york city
+	    </item>
+	    <item>
+	    tulsa
+	    </item>
+	    <item>
+	    california
+	    </item>
+	    <item>
+	    texas
+	    </item>
+	    <item>
+	    nantucket
+	    </item>
+	    <item>
+	    montana
+	    </item>
+	    <item>
+	    kahului
+	    </item>
+	    <item>
+	    los angeles
+	    </item>
+	    <item>
+	    massachusetts
+	    </item>
+	    <item>
+	    syracuse
+	    </item>
+	    <item>
+	    missouri
+	    </item>
+	    <item>
+	    vail
+	    </item>
+	    <item>
+	    vermont
+	    </item>
+	    <item>
+	    l a
+	    </item>
+	    <item>
+	    honolulu
+	    </item>
+	    <item>
+	    orlando
+	    </item>
+	    <item>
+	    north dakota
+	    </item>
+	    <item>
+	    tennessee
+	    </item>
+	    <item>
+	    pennsylvania
+	    </item>
+	    <item>
+	    n y c
+	    </item>
+	    <item>
+	    vegas
+	    </item>
+	    <item>
+	    cleveland
+	    </item>
+	    <item>
+	    utah
+	    </item>
+	    <item>
+	    fort lauderdale
+	    </item>
+	    <item>
+	    d c
+	    </item>
+	    <item>
+	    tucson
+	    </item>
+	    <item>
+	    kentucky
+	    </item>
+	    <item>
+	    colorado
+	    </item>
+	    <item>
+	    nashville
+	    </item>
+	    <item>
+	    manhattan
+	    </item>
+	    <item>
+	    new mexico
+	    </item>
+	    <item>
+	    south carolina
+	    </item>
+	    <item>
+	    kansas
+	    </item>
+	    <item>
+	    hawaii
+	    </item>
+	    <item>
+	    houston
+	    </item>
+	    <item>
+	    albuquerque
+	    </item>
+	    <item>
+	    michigan
+	    </item>
+	    <item>
+	    florida
+	    </item>
+	    <item>
+	    detroit
+	    </item>
+	    <item>
+	    aspen
+	    </item>
+	    <item>
+	    washington d c
+	    </item>
+	    <item>
+	    orange county
+	    </item>
+	    <item>
+	    salt lake city
+	    </item>
+	    <item>
+	    anchorage
+	    </item>
+	    <item>
+	    oregon
+	    </item>
+	    <item>
+	    buffalo
+	    </item>
+	    <item>
+	    ithaca
+	    </item>
+	    <item>
+	    new jersey
+	    </item>
+	    <item>
+	    the district of columbia
+	    </item>
+	    <item>
+	    south dakota
+	    </item>
+	    <item>
+	    ohio
+	    </item>
+	    <item>
+	    niagara falls
+	    </item>
+	    <item>
+	    nebraska
+	    </item>
+	    <item>
+	    new york
+	    </item>
+	    <item>
+	    phoenix
+	    </item>
+	    <item>
+	    boston
+	    </item>
+	    <item>
+	    cincinnati
+	    </item>
+	    <item>
+	    indiana
+	    </item>
+	    <item>
+	    atlantic city
+	    </item>
+	    <item>
+	    dallas
+	    </item>
+	    <item>
+	    arizona
+	    </item>
+	    <item>
+	    arkansas
+	    </item>
+	    <item>
+	    maryland
+	    </item>
+	    <item>
+	    alaska
+	    </item>
+	    <item>
+	    san francisco
+	    </item>
+	    <item>
+	    tampa
+	    </item>
+	    <item>
+	    rhode island
+	    </item>
+	    <item>
+	    georgia
+	    </item>
+	    <item>
+	    wyoming
+	    </item>
+	    <item>
+	    yellowstone
+	    </item>
+	    <item>
+	    boise
+	    </item>
+	    <item>
+	    new hampshire
+	    </item>
+	    <item>
+	    nevada
+	    </item>
+	    <item>
+	    north carolina
+	    </item>
+	    <item>
+	    minnesota
+	    </item>
+	    <item>
+	    new england
+	    </item>
+	    <item>
+	    iowa
+	    </item>
+	    <item>
+	    maine
+	    </item>
+	    <item>
+	    charleston
+	    </item>
+	    <item>
+	    san antonio
+	    </item>
+	    <item>
+	    west coast
+	    </item>
+	    <item>
+	    alabama
+	    </item>
+	    <item>
+	    chicago
+	    </item>
+	    <item>
+	    virginia
+	    </item>
+	    <item>
+	    baltimore
+	    </item>
+	    <item>
+	    santa barbara
+	    </item>
+	</one-of>
+</rule>
+
+<rule id="_class_location_international_2" scope="public">
+	<one-of>
+	    <item>
+	    israel
+	    </item>
+	    <item>
+	    switzerland
+	    </item>
+	    <item>
+	    uganda
+	    </item>
+	    <item>
+	    united kingdom
+	    </item>
+	    <item>
+	    tijuana
+	    </item>
+	    <item>
+	    belfast
+	    </item>
+	    <item>
+	    cuba
+	    </item>
+	    <item>
+	    rio de janeiro
+	    </item>
+	    <item>
+	    zurich
+	    </item>
+	    <item>
+	    ecuador
+	    </item>
+	    <item>
+	    north korea
+	    </item>
+	    <item>
+	    saudi arabia
+	    </item>
+	    <item>
+	    amsterdam
+	    </item>
+	    <item>
+	    cyprus
+	    </item>
+	    <item>
+	    tel aviv
+	    </item>
+	    <item>
+	    palestine
+	    </item>
+	    <item>
+	    cape town
+	    </item>
+	    <item>
+	    rome
+	    </item>
+	    <item>
+	    toronto
+	    </item>
+	    <item>
+	    munich
+	    </item>
+	    <item>
+	    pakistan
+	    </item>
+	    <item>
+	    athens
+	    </item>
+	    <item>
+	    kenya
+	    </item>
+	    <item>
+	    mexico city
+	    </item>
+	    <item>
+	    spain
+	    </item>
+	    <item>
+	    venice
+	    </item>
+	    <item>
+	    philippines
+	    </item>
+	    <item>
+	    kuwait
+	    </item>
+	    <item>
+	    europe
+	    </item>
+	    <item>
+	    singapore
+	    </item>
+	    <item>
+	    belgrade
+	    </item>
+	    <item>
+	    chile
+	    </item>
+	    <item>
+	    beijing
+	    </item>
+	    <item>
+	    peru
+	    </item>
+	    <item>
+	    venezuela
+	    </item>
+	    <item>
+	    australia
+	    </item>
+	    <item>
+	    guatemala
+	    </item>
+	    <item>
+	    brazil
+	    </item>
+	    <item>
+	    indonesia
+	    </item>
+	    <item>
+	    panama
+	    </item>
+	    <item>
+	    chennai
+	    </item>
+	    <item>
+	    damascus
+	    </item>
+	    <item>
+	    uruguay
+	    </item>
+	    <item>
+	    great britain
+	    </item>
+	    <item>
+	    dublin
+	    </item>
+	    <item>
+	    india
+	    </item>
+	    <item>
+	    the philippines
+	    </item>
+	    <item>
+	    hong kong
+	    </item>
+	    <item>
+	    el salvador
+	    </item>
+	    <item>
+	    africa
+	    </item>
+	    <item>
+	    korea
+	    </item>
+	    <item>
+	    poland
+	    </item>
+	    <item>
+	    u s virgin islands
+	    </item>
+	    <item>
+	    england
+	    </item>
+	    <item>
+	    bangladesh
+	    </item>
+	    <item>
+	    vancouver
+	    </item>
+	    <item>
+	    ireland
+	    </item>
+	    <item>
+	    japan
+	    </item>
+	    <item>
+	    stockholm
+	    </item>
+	    <item>
+	    london
+	    </item>
+	    <item>
+	    scandinavia
+	    </item>
+	    <item>
+	    shanghai
+	    </item>
+	    <item>
+	    jamaica
+	    </item>
+	    <item>
+	    vietnam
+	    </item>
+	    <item>
+	    jakarta
+	    </item>
+	    <item>
+	    portugal
+	    </item>
+	    <item>
+	    afghanistan
+	    </item>
+	    <item>
+	    british virgin islands
+	    </item>
+	    <item>
+	    south america
+	    </item>
+	    <item>
+	    dubai
+	    </item>
+	    <item>
+	    copenhagen
+	    </item>
+	    <item>
+	    glasgow
+	    </item>
+	    <item>
+	    south korea
+	    </item>
+	    <item>
+	    egypt
+	    </item>
+	    <item>
+	    berlin
+	    </item>
+	    <item>
+	    madrid
+	    </item>
+	    <item>
+	    bermuda
+	    </item>
+	    <item>
+	    hungary
+	    </item>
+	    <item>
+	    kuala lumpur
+	    </item>
+	    <item>
+	    acapulco
+	    </item>
+	    <item>
+	    guatemala city
+	    </item>
+	    <item>
+	    montreal
+	    </item>
+	    <item>
+	    morocco
+	    </item>
+	    <item>
+	    san salvador
+	    </item>
+	    <item>
+	    austria
+	    </item>
+	    <item>
+	    aruba
+	    </item>
+	    <item>
+	    iceland
+	    </item>
+	    <item>
+	    asia
+	    </item>
+	    <item>
+	    bolivia
+	    </item>
+	    <item>
+	    virgin islands
+	    </item>
+	    <item>
+	    mozambique
+	    </item>
+	    <item>
+	    cairo
+	    </item>
+	    <item>
+	    calgary
+	    </item>
+	    <item>
+	    malaysia
+	    </item>
+	    <item>
+	    puerto rico
+	    </item>
+	    <item>
+	    tokyo
+	    </item>
+	    <item>
+	    istanbul
+	    </item>
+	    <item>
+	    buenos aires
+	    </item>
+	    <item>
+	    hyderabad
+	    </item>
+	    <item>
+	    delhi
+	    </item>
+	    <item>
+	    germany
+	    </item>
+	    <item>
+	    scotland
+	    </item>
+	    <item>
+	    northern ireland
+	    </item>
+	    <item>
+	    edinburgh
+	    </item>
+	    <item>
+	    panama city
+	    </item>
+	    <item>
+	    caribbean
+	    </item>
+	    <item>
+	    netherlands
+	    </item>
+	    <item>
+	    greece
+	    </item>
+	    <item>
+	    colombia
+	    </item>
+	    <item>
+	    nicaragua
+	    </item>
+	    <item>
+	    guadalajara
+	    </item>
+	    <item>
+	    beirut
+	    </item>
+	    <item>
+	    czech republic
+	    </item>
+	    <item>
+	    syria
+	    </item>
+	    <item>
+	    the netherlands
+	    </item>
+	    <item>
+	    denmark
+	    </item>
+	    <item>
+	    u k
+	    </item>
+	    <item>
+	    sydney
+	    </item>
+	    <item>
+	    cancun
+	    </item>
+	    <item>
+	    bangkok
+	    </item>
+	    <item>
+	    paraguay
+	    </item>
+	    <item>
+	    canada
+	    </item>
+	    <item>
+	    ukraine
+	    </item>
+	    <item>
+	    barcelona
+	    </item>
+	    <item>
+	    frankfurt
+	    </item>
+	    <item>
+	    norway
+	    </item>
+	    <item>
+	    finland
+	    </item>
+	    <item>
+	    argentina
+	    </item>
+	    <item>
+	    florence
+	    </item>
+	    <item>
+	    france
+	    </item>
+	    <item>
+	    lebanon
+	    </item>
+	    <item>
+	    costa rica
+	    </item>
+	    <item>
+	    moscow
+	    </item>
+	    <item>
+	    honduras
+	    </item>
+	    <item>
+	    new zealand
+	    </item>
+	    <item>
+	    south africa
+	    </item>
+	    <item>
+	    iraq
+	    </item>
+	    <item>
+	    britain
+	    </item>
+	    <item>
+	    china
+	    </item>
+	    <item>
+	    paris
+	    </item>
+	    <item>
+	    sweden
+	    </item>
+	    <item>
+	    cambodia
+	    </item>
+	    <item>
+	    bahamas
+	    </item>
+	    <item>
+	    haiti
+	    </item>
+	    <item>
+	    mexico
+	    </item>
+	    <item>
+	    thailand
+	    </item>
+	    <item>
+	    iran
+	    </item>
+	    <item>
+	    quebec city
+	    </item>
+	    <item>
+	    russia
+	    </item>
+	    <item>
+	    san juan
+	    </item>
+	    <item>
+	    italy
+	    </item>
+	    <item>
+	    the caribbean
+	    </item>
+	</one-of>
+</rule>
+
+</language-model>

@@ -1,0 +1,6 @@
+# Params for SSI model without stopwords
+classifierName = intent
+doStemming = true
+removeStopWords = true
+maxNBest = 10
+modelDescription = Marriott Models (splitting HotelAmenitiesBreakfast_Query, HotelAmenitiesParking_Query, HotelAmenitiesShutttle_Query, HotelAmenitiesPetPolicy_Query and AccountAddress_Change, adding new intents Points_Earned and Promotion_Enroll)

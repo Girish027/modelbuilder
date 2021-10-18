@@ -1,0 +1,20 @@
+{
+    "MODEL_BUILDER_STORAGE":"/home/udhay/mount_simulate",
+    "MODELBUILDER_ROOT_DIRECTORY":"/home/udhay/work/mwb/modelbuilder",
+    "WEB2NL_URL":"http://stable.api.sjc02.247-inc.net/v1/classifier/",
+    "WEB2NL_API_KEY":"YYjr2deysZmsKTv2",
+    "MODELBUILDER_URL":"http://stable.developer.sv2.247-inc.net/v1/modelbuilder/",
+    "TFX_URL":"http://staging.api.247-inc.net/v1/machinelearning/predictions",
+    "TFX_URL_KEY":"3AJ9OsBjGK6ZLr2jxd2z2eLEQY51NsJU",
+    "C_FORCE_ROOT":"1",
+    "PYTHONIOENCODING":"utf-8",
+    "MICROSOFT_SDK_HOST":"fafr25.pool.sv2.247-inc.net",
+    "RECO_HOST":"rec04.p303.sv2.247-inc.net",
+    "LOG_LOCATION":"/home/udhay/work/mwb/modelbuilder/logs/modelbuilder-worker.log",
+    "BROKER_TRANSPORT_OPTIONS_SENTINELS": "localhost,localhost",
+    "BROKER_TRANSPORT_OPTIONS_SERVICE_NAME": "mymaster",
+    "BROKER_URL_HOST": "redis-sentinel",
+    "BROKER_URL_PORT": 26379,
+    "CELERY_RESULT_BACKEND_HOST": "redis-sentinel",
+    "CELERY_RESULT_BACKEND_PORT": 26379
+}

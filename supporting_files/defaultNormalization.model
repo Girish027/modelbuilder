@@ -1,0 +1,233 @@
+# Copyright © 2017 [24]7.ai, Inc. ALL RIGHTS RESERVED. DO NOT DISTRIBUTE. This is an unpublished,
+# proprietary work which is fully protected under copyright law. This code may
+# only be used pursuant to a valid license from [24]7.ai, Inc.
+
+# Machine generated (Modeling Workbench), do not edit! For any issues or concerns, drop email at mwb-team@247.ai
+
+[fil,file-type,1]
+0,normalization-model
+
+[xforms,transforms,22]
+0,regex-replace,apostrophe-regex
+1,whitespace-normalization
+2,stems,word-substitutions
+3,wordclass-subst-regex,email-regex
+4,wordclass-subst-regex,url-regex
+5,regex-removal,html-encoding
+6,wordclass-subst-regex,date-regex
+7,whitespace-normalization
+8,wordclass-subst-regex,class_time
+9,wordclass-subst-regex,class_percentage
+10,wordclass-subst-regex,phone_number
+11,wordclass-subst-regex,wordclass-substitutions
+12,wordclass-subst-regex,class_number
+13,spell-checking,enchant-spellcheck-enhance
+14,case-normalization
+15,wordclass-subst-regex,wordclass-substitutions
+16,stop-words,stops
+17,stems,stem-words
+18,regex-replace,punctuation-normalization
+19,stop-words,stops
+20,regex-replace,rx-remove-dup-words
+21,whitespace-normalization
+
+
+[apostrophe-regex,regex-replace,1]
+0,/[`|‘|’]/i,'
+
+[word-substitutions,stems,28]
+0,_class_debit_card's,_class_debit_card is
+1,account's,account
+2,advisor's,advisor
+3,ain't,am not
+4,aren't,are not
+5,'em,them
+6,can't,cannot
+7,card's,card is
+8,cashier's,cashier
+9,check's,check has
+10,couldn't,could not
+11,deposit's,deposit
+12,didn't,did not
+13,doesn't,does not
+14,don't,do not
+15,hadn't,had not
+16,hasn't,has not
+17,haven't,have not
+18,he'd,he would
+19,he'll,he will
+20,he's,he has
+21,i'd,i would
+22,i'll,i will
+23,i'm,i am
+24,i've,i have
+25,isn't,is not
+26,it's,it is
+27,let's,let us
+
+[email-regex,wordclass-subst-regex,1]
+0,/(([\w_\.-])+@([\d\w\.-])+\.([a-z\.]){2,6})/i,_class_email
+
+[url-regex,wordclass-subst-regex,1]
+0,/https?://(www\.)?[\-a-zA-Z0-9@:%._\+~#=/]+/i,_class_url
+
+[html-encoding,regex-removal,1]
+0,/%[0-9]+/
+
+[date-regex,wordclass-subst-regex,7]
+0,/(?:\d{1,2}\s*[\s/\.-]\s*\d{1,2}\s*[\s/\.-]\s*(?:\d{4}|\d{2}))/i,_class_date
+1,/(?:(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed)\s*(?:[\s,/\.-]|of)\s*)?(?:(?:(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?)\s*(?:[\s,/\.-]|of)\s*(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?)\s*(?:[\s,/\.-]|of)\s*\b(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)\b)|(?:(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?)\s*(?:[\s,/\.-]|of)\s*\b(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)\b\s*(?:[\s,/\.-]|of)\s*(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?))|(?:\b(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)\b\s*(?:[\s,/\.-]|of)\s*(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?)\s*(?:[\s,/\.-]|of)\s*(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?)))(?:\s*(?:[\s,/\.-]|of)\s*(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed))?/i,_class_date
+2,/(?:(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed)\s*(?:[\s,/\.-]|of)\s*)?(?:(?:(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?)\s*(?:[\s,/\.-]|of)?\s*(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)\s*(?:[\s,/\.-]|of)?\s*(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?))|(?:(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?))|(?:(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?)(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)))(?:\s*(?:[\s,/\.-]|of)\s*(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed))?/i,_class_date
+3,/(?:(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed)\s*(?:[\s,/\.-]|of)\s*)?(?:(?:(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?)\s*(?:[\s,/\.-]|of)\s*\b(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)\b)|(?:\b(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)\b\s*(?:[\s,/\.-]|of)\s*(?:\d{4}|\d{1,2}(?:nd|th|rd|st)?)))(?:\s*(?:[\s,/\.-]|of)\s*(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed))?/i,_class_date
+4,/(?:\d{1,2}\s*[/]\s*(?:\d{4}|\d{2}))|(?:\d{1,2}\s*[\.]\s*\d{4})/i,_class_date
+5,/\b(?:january|february|march|april|june|july|august|september|october|november|december|jan|feb|mar|jun|jul|aug|sept|sep|oct|nov|dec)\b/i,_class_date
+6,/\b(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed)\b/i,_class_date
+
+[class_time,wordclass-subst-regex,1]
+0,/(?:\d{1,2}\s*:?\s*)?\d{1,2}\s*(?:am|pm|hrs|hours)/i,_class_time
+
+[class_percentage,wordclass-subst-regex,5]
+0,/[0-9]+\.[0-9]*\s?(?:%|percent(?:age|ile)?)/i,_class_percentage
+1,/[0-9]+\s?(?:%|percent(?:age|ile)?)/i,_class_percentage
+2,/(?:one(?:\s|-))?hundred\s?(?:%|percent(?:age|ile)?)/i,_class_percentage
+3,/(?:\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)(?:(?:\s|-)?(?:one|two|three|four|five|six|seven|eight|nine))?)\s?(?:%|percent(?:age|ile)?)/i,_class_percentage
+4,/\b(?:zero|one|two|three|four|five|six|seven|eight|nine|hundred|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)\s?(?:%|percent(?:age|ile)?)/i,_class_percentage
+
+[phone_number,wordclass-subst-regex,2]
+0,/\(?([0-9]{3})?[-.\s)]*[0-9]{3}[-.\s]*[0-9]{4}\b/,_class_phone_number
+1,/\b[0-9]{5}[\s\.-]?[0-9]{5}\b/,_class_phone_number
+
+[wordclass-substitutions,wordclass-subst-regex,24]
+0,/\b(?:customer services representative|customer service representative|customer services operator|customer service operator|customer services agent|customer care assistant|customer service agent|customer servicing|customer relations|real live person|customer service|representative|customer care|real person|live person|human being|call centre|supervisor|specialist|assistant|operator|advisor|adviser|human|agent|rep)'?s?\b/i,_class_agent
+1,/\b(?:history channel international|columbia broadcasting system|national geographic channel|the disney channel (west)|independent film channel|dish network sports stop|dish home interactive tv|discovery home & leisure|american movie classics|lifetime movie network|america's top 120 plus|women's entertainment|turner classic movies|the discovery channel|the biography channel|great america country|americas top 120 plus|the learning channel|the hallmark channel|outdoor life network|the science channel|the outdoor channel|the history channel|remote control help|america's top 120 +|the disney channel|pay per view guide|nickelodeon (west)|cantonese jadeword|americas top 120 +|america's top 120+|the speed channel|panorama italiano|game show network|fox movie channel|americas top 120+|america's top 250|america's top 200|america's top 120|fox sports world|espn 2 alternate|discovery health|americas top 250|americas top 200|americas top 120|discovery times|cartoon network|sci-fi channel|espn alternate|do it yourself|discovery kids|comedy central|animal planet|punjabi mega|polish super|food network|espn classic|brazil elite|arabic elite|vh1 classic|usa network|toon disney|nickelodeon|hindi elite|greek elite|bbc america|at 120 plus|at120 plus|abc family|g4tech tv|discovery|cbssports|boomerang|spike tv|soap net|pak mega|nick gas|lifetime|at 120 +|wupa-tv|wtog-tv|wsbk-tv|wpsg-tv|wpcw-tv|wlny-tv|wkbd-tv|wfor-tv|wcco-tv|wcbs-tv|wbfs-tv|wbbm-tv|tv land|package|ktxa-tv|ktvt-tv|kstw-tv|kpix-tv|kovr-tv|kmax-tv|kdka-tv|kcnc-tv|kccw-tv|kcco-tv|kcbs-tv|kcal-tv|kbcw-tv|espnews|cbsnews|at120 +|at 120+|wwj-tv|wjz-tv|wbz-tv|noggin|latino|kyw-tv|espn 2|disney|at120+|at 250|at 200|at 120|style|sport|mtv 2|hindi|cbssn|bravo|at250|at200|at120|wupa|wtog|wsbk|wpsg|wpcw|wlny|wkbd|wfor|wcco|wcbs|wbfs|wbbm|sprt|ktxa|ktvt|kstw|kpix|kovr|kmax|kdka|kcnc|kccw|kcco|kcbs|kcal|kbcw|hgtv|fuse|espn|cbsn|wwj|wjz|wbz|vh1|tnt|sec|pkg|pax|mtv|kyw|fox|cnn|cmt|cbs|bet|bbc|abc|a&e|fx|e!)'?s?/i,_class_channel
+2,/\b(?:gennady gennadyevich golovkin|gennedy gollovkin|gennedy gollovken|gennady gollovkin|gennady gollovken|gennedy golovkin|gennedy golovken|gennady golovkin|gennady golovken|canelo alvarez|gennadyevich|may whether|may weather|meriwether|maywhether|mayweather|may wether|macgreggor|macgreggar|mcgreggor|mcgreggar|maywether|macgregor|gollovkin|gollovken|mcgregor|mcgregar|golovkin|golovken|gennnedy|gennnady|kennedy|gennedy|gennady|cannelo|alvarez|kanelo|connor|conner|cannlo|canelo|canala|floyd|floid|conor|ggg)'?s?\b/i,_class_fighter
+3,/\b(?:standard definition|high definition|sd|hd)'?s?\b/i,_class_resolution
+4,/\b(?:day after tomorrow|yesterday|day after|tomorrow|today|later)'?s?\b/i,_class_date
+5,/\b(?:wireless joey|wired joey|super joey|receiver|hopper 3|4k joey|hopper|wally|sling|joye|211k|vip)'?s?\b/i,_class_receiver
+6,/\b(?:granddaughter|girlfriend|boyfriend|grandson|grandkid|daughter|husband|brother|spouse|sister|mother|father|cousin|wives|wife|son|kid)'?s?\b/i,_class_family
+7,/\b(?:text message|sms message|message|text|sms)'?s?\b/i,_class_text
+8,/\b(?:pay pre view|pay per view|payper view|pay preview|pay perview|payperview|ppv)'?s?\b/i,_class_ppv
+9,/\b(?:match boxing|boxing match|boxing|fight)'?s?\b/i,_class_fight
+10,/\b(?:pre ordered|preordered)'?s?\b/i,_class_preordered
+11,/(?:application|mobile app|app)'?s?\b/i,_class_app
+12,/\b(?:television|tv)'?s?\b/i,_class_tv
+13,/\b(?:should not|would not|shouldn't|could not|wouldn't|will not|shouldnt|does not|couldn't|wouldnt|weren't|doesn't|did not|couldnt|can not|werent|do not|didn't|cannot|aren't|won't|never|isn't|don't|can't|arent|wont|isnt|dont|cant|aint|not|no)'?s?\b/i,_class_negation
+14,/\b(?:pissed off|goddammit|fricking|bollocks|blighter|arsehole|goddamn|fucking|dipshit|bastard|asshole|wanker|bugger|bloody|blimey|whore|jesus|bitch|shit|geez|fuck|feck|darn|damn|crud|crap|arse|god)'?s?\b/i,_class_swears
+15,/\b(?:seventeen|thirteen|nineteen|fourteen|eighteen|sixteen|seventy|hundred|fifteen|twenty|twelve|thirty|ninety|eleven|eighty|three|sixty|seven|forty|fifty|eight|zero|nine|four|five|two|ten|six|one)'?s?\b/i,_class_number
+16,/\b(?:pre order|preorder)'?s?\b/i,_class_preorder
+17,/\b(?:on line|online)'?s?\b/i,_class_online
+18,/\b(?:account|accnt|acct|acc)'?s?\b/i,_class_account
+19,/\b(?:settup|set up|setup)'?s?\b/i,_class_setup
+20,/\b(?:hello|hola|hey|hi)'?s?\b/i,_class_hello
+21,/\b(?:yeah|okie|okay|yup|yes|yep|yea|ok)'?s?\b/i,_class_yes
+22,/\b(?:21.0|20.1|20.0|210|201|200|52|50|40|21|20)'?s?\b/i,_class_remote
+23,/\b(?:015b|015a|535|015|004|002)'?s?\b/i,_class_signal
+
+[class_number,wordclass-subst-regex,3]
+0,/\b[0-9]+(?:\s*[\.,]\s*[0-9]+)*(?:\s*(?:nd|th|rd|st))?\b/i,_class_number
+1,/\b(?:zero|one|two|three|four|five|six|seven|eight|nine|hundred|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)'?s\b/i,_class_number
+2,/#(?=[^a-zA-Z0-9])/i,_class_number_ref
+
+[enchant-spellcheck-enhance,spell-checking,3]
+0,aff,/v1/spells/en/us/current/en_us.aff
+1,dict,/v1/spells/en/us/current/en_us.dic
+2,words,/v1/spells/dish/chatbot/current/spellexception.txt
+
+
+[wordclass-substitutions,wordclass-subst-regex,24]
+0,/\b(?:customer services representative|customer service representative|customer services operator|customer service operator|customer services agent|customer care assistant|customer service agent|customer servicing|customer relations|real live person|customer service|representative|customer care|real person|live person|human being|call centre|supervisor|specialist|assistant|operator|advisor|adviser|human|agent|rep)'?s?\b/i,_class_agent
+1,/\b(?:history channel international|columbia broadcasting system|national geographic channel|the disney channel (west)|independent film channel|dish network sports stop|dish home interactive tv|discovery home & leisure|american movie classics|lifetime movie network|america's top 120 plus|women's entertainment|turner classic movies|the discovery channel|the biography channel|great america country|americas top 120 plus|the learning channel|the hallmark channel|outdoor life network|the science channel|the outdoor channel|the history channel|remote control help|america's top 120 +|the disney channel|pay per view guide|nickelodeon (west)|cantonese jadeword|americas top 120 +|america's top 120+|the speed channel|panorama italiano|game show network|fox movie channel|americas top 120+|america's top 250|america's top 200|america's top 120|fox sports world|espn 2 alternate|discovery health|americas top 250|americas top 200|americas top 120|discovery times|cartoon network|sci-fi channel|espn alternate|do it yourself|discovery kids|comedy central|animal planet|punjabi mega|polish super|food network|espn classic|brazil elite|arabic elite|vh1 classic|usa network|toon disney|nickelodeon|hindi elite|greek elite|bbc america|at 120 plus|at120 plus|abc family|g4tech tv|discovery|cbssports|boomerang|spike tv|soap net|pak mega|nick gas|lifetime|at 120 +|wupa-tv|wtog-tv|wsbk-tv|wpsg-tv|wpcw-tv|wlny-tv|wkbd-tv|wfor-tv|wcco-tv|wcbs-tv|wbfs-tv|wbbm-tv|tv land|package|ktxa-tv|ktvt-tv|kstw-tv|kpix-tv|kovr-tv|kmax-tv|kdka-tv|kcnc-tv|kccw-tv|kcco-tv|kcbs-tv|kcal-tv|kbcw-tv|espnews|cbsnews|at120 +|at 120+|wwj-tv|wjz-tv|wbz-tv|noggin|latino|kyw-tv|espn 2|disney|at120+|at 250|at 200|at 120|style|sport|mtv 2|hindi|cbssn|bravo|at250|at200|at120|wupa|wtog|wsbk|wpsg|wpcw|wlny|wkbd|wfor|wcco|wcbs|wbfs|wbbm|sprt|ktxa|ktvt|kstw|kpix|kovr|kmax|kdka|kcnc|kccw|kcco|kcbs|kcal|kbcw|hgtv|fuse|espn|cbsn|wwj|wjz|wbz|vh1|tnt|sec|pkg|pax|mtv|kyw|fox|cnn|cmt|cbs|bet|bbc|abc|a&e|fx|e!)'?s?/i,_class_channel
+2,/\b(?:gennady gennadyevich golovkin|gennedy gollovkin|gennedy gollovken|gennady gollovkin|gennady gollovken|gennedy golovkin|gennedy golovken|gennady golovkin|gennady golovken|canelo alvarez|gennadyevich|may whether|may weather|meriwether|maywhether|mayweather|may wether|macgreggor|macgreggar|mcgreggor|mcgreggar|maywether|macgregor|gollovkin|gollovken|mcgregor|mcgregar|golovkin|golovken|gennnedy|gennnady|kennedy|gennedy|gennady|cannelo|alvarez|kanelo|connor|conner|cannlo|canelo|canala|floyd|floid|conor|ggg)'?s?\b/i,_class_fighter
+3,/\b(?:standard definition|high definition|sd|hd)'?s?\b/i,_class_resolution
+4,/\b(?:day after tomorrow|yesterday|day after|tomorrow|today|later)'?s?\b/i,_class_date
+5,/\b(?:wireless joey|wired joey|super joey|receiver|hopper 3|4k joey|hopper|wally|sling|joye|211k|vip)'?s?\b/i,_class_receiver
+6,/\b(?:granddaughter|girlfriend|boyfriend|grandson|grandkid|daughter|husband|brother|spouse|sister|mother|father|cousin|wives|wife|son|kid)'?s?\b/i,_class_family
+7,/\b(?:text message|sms message|message|text|sms)'?s?\b/i,_class_text
+8,/\b(?:pay pre view|pay per view|payper view|pay preview|pay perview|payperview|ppv)'?s?\b/i,_class_ppv
+9,/\b(?:match boxing|boxing match|boxing|fight)'?s?\b/i,_class_fight
+10,/\b(?:pre ordered|preordered)'?s?\b/i,_class_preordered
+11,/(?:application|mobile app|app)'?s?\b/i,_class_app
+12,/\b(?:television|tv)'?s?\b/i,_class_tv
+13,/\b(?:should not|would not|shouldn't|could not|wouldn't|will not|shouldnt|does not|couldn't|wouldnt|weren't|doesn't|did not|couldnt|can not|werent|do not|didn't|cannot|aren't|won't|never|isn't|don't|can't|arent|wont|isnt|dont|cant|aint|not|no)'?s?\b/i,_class_negation
+14,/\b(?:pissed off|goddammit|fricking|bollocks|blighter|arsehole|goddamn|fucking|dipshit|bastard|asshole|wanker|bugger|bloody|blimey|whore|jesus|bitch|shit|geez|fuck|feck|darn|damn|crud|crap|arse|god)'?s?\b/i,_class_swears
+15,/\b(?:seventeen|thirteen|nineteen|fourteen|eighteen|sixteen|seventy|hundred|fifteen|twenty|twelve|thirty|ninety|eleven|eighty|three|sixty|seven|forty|fifty|eight|zero|nine|four|five|two|ten|six|one)'?s?\b/i,_class_number
+16,/\b(?:pre order|preorder)'?s?\b/i,_class_preorder
+17,/\b(?:on line|online)'?s?\b/i,_class_online
+18,/\b(?:account|accnt|acct|acc)'?s?\b/i,_class_account
+19,/\b(?:settup|set up|setup)'?s?\b/i,_class_setup
+20,/\b(?:hello|hola|hey|hi)'?s?\b/i,_class_hello
+21,/\b(?:yeah|okie|okay|yup|yes|yep|yea|ok)'?s?\b/i,_class_yes
+22,/\b(?:21.0|20.1|20.0|210|201|200|52|50|40|21|20)'?s?\b/i,_class_remote
+23,/\b(?:015b|015a|535|015|004|002)'?s?\b/i,_class_signal
+
+[stops,stop-words,29]
+0,been
+1,be
+2,your
+3,our
+4,we
+5,'em
+6,that
+7,uh
+8,are
+9,and
+10,of
+11,me
+12,um
+13,oh
+14,so
+15,you
+16,a
+17,like
+18,in
+19,was
+20,this
+21,i
+22,is
+23,it
+24,my
+25,an
+26,the
+27,at
+28,to
+
+[stem-words,stems,0]
+
+
+[punctuation-normalization,regex-replace,1]
+0,/(\-|\.|\,|\?|\!|\*|\$|\%|\&|\#|\@|\:|"|/|\)|\()/i,,
+
+[stops,stop-words,29]
+0,been
+1,be
+2,your
+3,our
+4,we
+5,'em
+6,that
+7,uh
+8,are
+9,and
+10,of
+11,me
+12,um
+13,oh
+14,so
+15,you
+16,a
+17,like
+18,in
+19,was
+20,this
+21,i
+22,is
+23,it
+24,my
+25,an
+26,the
+27,at
+28,to
+
+[rx-remove-dup-words,regex-replace,1]
+0,/\b(\w+)(\s\1\b)+/i,$1
+

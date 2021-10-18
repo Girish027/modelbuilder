@@ -1,0 +1,90 @@
+{
+	"version": "0.0.1",
+	"name": "chat model config",
+	"description": "no post processing, all predefines selected",
+	"useLegacyConfigFile": false,
+	"legacyConfigFileName": "Config.cfg",
+	"dataCleaning": {
+		"regex-removal": [
+			"/\"other_language\"|\"speech_in_noise\"|\"noise\"|\"side_speech\"|\"echo_prompt\"|\"echo_speech\"|\"other_language\"/",
+			"/\"null\"/"
+		]
+	},
+	"transformations": [
+    {
+      "word-substitutions":{
+        "type":"stems",
+        "mappings":{
+          "account's":"account",
+          "aint't":"am not"
+        },
+        "comments":"These are client specific abbreviations"
+      }
+		},
+		{
+			"class-phone-number" : {
+					"type": "wordclass-subst-regex",
+					"mappings": {
+									"/\\b([0-9]{3})?[\\s\\.-]?[0-9]{3}[\\s\\.-]?[0-9]{4}\\b/":"_class_phone_number",
+									"/\\b[0-9]{5}[\\s\\.-]?[0-9]{5}\\b/":"_class_phone_number"
+								},
+					"comments": "This is used to predict time like 10 AM"
+			}
+		},
+    "whitespace-normalization",
+    {
+      "class-time" : {
+          "type": "wordclass-subst-regex",
+          "mappings": {"/\\d{1,2}\\s*(?:(?:am|pm)|(?:\\s:\\s\\d{1,2})\\s*(?:am|pm)?)/i":"_class_time"},
+          "comments": "This is used to predict time like 10 AM"
+      }
+    },
+    {
+      "synonyms" : {
+  		  "type": "wordclass-subst-regex",
+          "mappings": {
+						"/\b(?:make|create)'?s?\b/i": "_class_make",
+						"/\b(?:update|change)'?s?\b/i": "_class_update"
+					},
+          "comments": "This is used to predict time like 10 AM"
+      }
+    },
+    {
+      "class-location" : {
+          "type": "wordclass-subst-regex",
+          "mappings": {
+						"/\b(?:the district of columbia|district of columbia|fort lauderdale|washington d c|south carolina|salt lake city|north carolina|santa barbara|san francisco|orange county|niagara falls|new york city|new hampshire|massachusetts|atlantic city|south dakota|rhode island|pennsylvania|palm springs|north dakota|yellowstone|san antonio|new orleans|new england|mississippi|los angeles|hilton head|connecticut|albuquerque|west coast|washington|pittsburgh|new mexico|new jersey|east coast|cincinnati|charleston|california|wisconsin|tennessee|san diego|salt lake|nashville|nantucket|minnesota|manhattan|las vegas|cleveland|baltimore|anchorage|virginia|syracuse|portland|oklahoma|new york|nebraska|missouri|michigan|maryland|key west|kentucky|illinois|honolulu|colorado|arkansas|wyoming|vermont|seattle|phoenix|orlando|montana|kapalua|kahului|indiana|houston|georgia|florida|detroit|chicago|buffalo|atlanta|arizona|alabama|tucson|oregon|newark|nevada|kansas|ithaca|hawaii|denver|dallas|boston|alaska|vegas|tulsa|texas|tampa|n y c|miami|maine|idaho|boise|aspen|vail|utah|ohio|iowa)'?s?\b/i":"_class_location_domestic"
+					},
+          "comments": "word class to predict domestic location"
+      }
+    },
+    {
+      "enchant-spellcheck-enhance" : {
+        "type":"spell-checking",
+        "url": "/v1/spells/sirius/chatbot/current/spellexception.txt"
+      }
+    },
+    "case-normalization",
+    {
+      "stops" : {
+          "type":"stop-words",
+          "list": ["the","is","uh"]
+      }
+    },
+    "training-data-stems",
+    {
+      "remove-punctuation": {
+        "type":"regex-removal",
+        "list": ["/\\s\\?|\\!|\\(|\\)|\\[|\\]|\"|~|\\+|,|{|}|:|;|\\*|\\|\\s/"]
+      }
+    }
+	],
+	"trainingConfigs":{
+		"numOfEpochs": 2,
+		"validationSplit":2,
+		"stemmingExceptions":["checking"],
+    "extraIntents":["phone-number"],
+      "num_feats_to_retain": 80
+	},
+	"modelType":"classifier"
+}

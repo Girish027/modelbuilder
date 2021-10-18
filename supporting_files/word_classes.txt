@@ -1,0 +1,387 @@
+_class_family
+son
+son's
+daughter
+daughter's
+wife
+arwa
+wife's
+wives
+spouse
+spouse's
+spouses
+husband
+husband's
+granddaughter
+granddaughter's
+grandson
+grandson's
+
+_class_united_states
+united states
+u s
+u s a
+the states
+
+_class_number
+two
+three
+four
+five
+six
+seven
+eight
+nine
+hundred
+thousand
+million
+billion
+ten
+eleven
+twelve
+thirteen
+fourteen
+fifteen
+sixteen
+seventeen
+eighteen
+nineteen
+twenty
+thirty
+fourty
+forty
+fifty
+sixty
+seventy
+eighty
+ninety
+
+_class_date
+monday
+monday's
+tuesday
+tuesday's
+wednesday
+wednesday's
+thursday
+thursday's
+friday
+friday's
+saturday
+saturday's
+sunday
+sunday's
+january
+january's
+february
+february's
+march
+march's
+april
+april's
+june
+june's
+july
+july's
+august
+august's
+september
+september's
+october
+october's
+november
+november's
+december
+december's
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+eleventh
+twelfth
+thirteenth
+fourteenth
+fifteenth
+sixteenth
+seventeenth
+eighteenth
+nineteenth
+twentieth
+thirtieth
+
+_class_currency
+dollar
+dollars
+cent
+cents
+
+_class_location_domestic
+alabama
+alaska
+albuquerque
+anchorage
+arizona
+arkansas
+aspen
+atlanta
+atlantic city
+baltimore
+boise
+boston
+buffalo
+california
+charleston
+chicago
+cincinnati
+cleveland
+colorado
+connecticut
+d c
+dallas
+denver
+detroit
+district of columbia
+east coast
+florida
+fort lauderdale
+georgia
+hawaii
+hilton head
+honolulu
+houston
+idaho
+illinois
+indiana
+iowa
+ithaca
+kahului
+kansas
+kapalua
+kentucky
+key west
+l a
+las vegas
+los angeles
+maine
+manhattan
+maryland
+massachusetts
+miami
+michigan
+minnesota
+mississippi
+missouri
+montana
+n y c
+nantucket
+nashville
+nebraska
+nevada
+new england
+new hampshire
+new jersey
+new mexico
+new orleans
+new york
+new york city
+newark
+niagara falls
+north carolina
+north dakota
+ohio
+oklahoma
+orange county
+oregon
+orlando
+palm springs
+pennsylvania
+phoenix
+pittsburgh
+portland
+rhode island
+salt lake
+salt lake city
+san antonio
+san diego
+san francisco
+santa barbara
+seattle
+south carolina
+south dakota
+syracuse
+tampa
+tennessee
+texas
+the district of columbia
+tucson
+tulsa
+utah
+vail
+vegas
+vermont
+virginia
+washington
+washington d c
+west coast
+yellowstone
+wisconsin
+wyoming
+
+
+_class_location_international
+acapulco
+afghanistan
+africa
+amsterdam
+argentina
+aruba
+asia
+athens
+australia
+austria
+bahamas
+bangkok
+bangladesh
+barcelona
+beijing
+beirut
+belfast
+belgrade
+berlin
+bermuda
+bolivia
+brazil
+britain
+british virgin islands
+buenos aires
+cairo
+calgary
+cambodia
+canada
+cancun
+cape town
+caribbean
+chennai
+chile
+china
+colombia
+copenhagen
+costa rica
+cuba
+cyprus
+czech republic
+damascus
+delhi
+denmark
+dubai
+dublin
+ecuador
+edinburgh
+egypt
+el salvador
+england
+europe
+finland
+florence
+france
+frankfurt
+germany
+glasgow
+great britain
+greece
+guadalajara
+guatemala
+guatemala city
+haiti
+honduras
+hong kong
+hungary
+hyderabad
+iceland
+india
+indonesia
+iran
+iraq
+ireland
+israel
+istanbul
+italy
+jakarta
+jamaica
+japan
+kenya
+korea
+kuala lumpur
+kuwait
+lebanon
+london
+madrid
+malaysia
+mexico
+mexico city
+montreal
+morocco
+moscow
+mozambique
+munich
+netherlands
+new zealand
+nicaragua
+north korea
+northern ireland
+norway
+pakistan
+palestine
+panama
+panama city
+paraguay
+paris
+peru
+philippines
+poland
+portugal
+puerto rico
+quebec city
+rio de janeiro
+rome
+russia
+san juan
+san salvador
+saudi arabia
+scandinavia
+scotland
+shanghai
+singapore
+south africa
+south america
+south korea
+spain
+stockholm
+sweden
+switzerland
+sydney
+syria
+tel aviv
+thailand
+the caribbean
+the netherlands
+the philippines
+tijuana
+tokyo
+toronto
+u s virgin islands
+u k 
+uganda
+ukraine
+united kingdom
+uruguay
+vancouver
+venezuela
+venice
+vietnam
+virgin islands
+zurich
